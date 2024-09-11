@@ -1,0 +1,77 @@
+<div class="container shadow">
+
+    <div class="row ">
+        <div class="col-sm-12  text-center shadow mt-3">
+            <h2><strong>New Registration Details</strong></h2>
+        </div>
+             
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped shadow">
+            <thead>
+                <tr>
+                   
+                    <th>Religion</th>
+                      <th>Location</th>
+                    <th>Marital Status</th>
+
+                    <th>Age</th>
+                    <th>Height</th>
+                      <th> Caste</th>
+                    <th>Complexion</th>
+                    <th>SubCaste</th>
+                    <th>HomeLocation</th>
+                  <th>Gotra</th>
+                  <th>District</th>
+                  <th>Qualifiction</th>
+                  <th>State</th>
+                  <th>Profession</th>
+                  <th>Country</th>
+                    <th>CreatedOn</th>
+                     <th>ProfilePicFirst</th>
+                      <th>ProfilePicSecond</th>
+                       <th>ProfilePicThird</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let registar of newRegistr">
+                
+                    <td>{{registar.religion}}</td>
+                    <td>{{registar.location}}</td>
+                    <td>{{registar.maritalStatus}}</td>
+                    <td>{{registar.age}}</td>
+                    <td>{{registar.height}}</td>
+                    <td>{{registar.caste}}</td>
+                    <td>{{registar.complexion}}</td>
+                    <td>{{registar.subCaste}}</td>
+
+                    <td>{{registar.homeLocation}}</td>
+                    <td>{{registar.gotra}}</td>
+                    <td>{{registar.district}}</td>
+                    <td>{{registar.qualification}}</td>
+                    <td>{{registar.state}}</td>
+                    
+                    <td>{{registar.profession}}</td>
+                    <td>{{registar.country}}</td>
+                    <td>{{registar.createdOn}}</td>
+                    <td>{{registar.image1}}</td>
+                    <td>{{registar.image2}}</td>
+                    <td>{{registar.image3}}</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn-rounded" data-mdb-ripple-init><i
+                                class="fa fa-edit " style="color: white;"></i></button>
+                        <button type="button" class="btn btn-danger ml-2 btn-rounded" data-mdb-ripple-init><i
+                                class="fa fa-trash-o ml-2" style="color: white;"></i>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

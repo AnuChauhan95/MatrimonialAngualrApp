@@ -1,0 +1,74 @@
+<div class="card shadow">
+    <div class="modal-header text-center">
+        <h4 class="modal-title "><strong> New Enquires</strong></h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="cutTo()">
+           <span aria-hidden="true">×</span>
+        </button>
+     </div>
+     <div class="modal-body">
+        <form [formGroup]="formEnquires" (ngSubmit)="saveEnquires()">
+          <div class="row">
+            <div class="col mb-4">
+              <label for="validationCustom01" class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Enter Name...." formControlName="enquireName">
+              
+            </div>
+            <div class="col mb-4">
+              <label for="validationCustom01" class="form-label">PhoneNo</label>
+              <input type="number" class="form-control" placeholder="Enter Num..." formControlName="mobileNo">
+              
+            </div>
+          
+
+          </div>
+
+          <div class="row">
+            <div class="col mb-4">
+              <label for="validationCustom01" class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="Enter Email...." formControlName="emailId">
+              
+            </div>
+            <div class="col mb-4">
+              <label for="validationCustom01" class="form-label">Gender</label>
+              <input type="text" class="form-control" placeholder="Enter Gender...." formControlName="gender">
+              
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="col mb-4">
+              <label for="validationCustom01" class="form-label">DOB</label>
+              <input type="date" class="form-control"  formControlName="doB">
+              
+            </div>  
+            <div class="col mb-4">
+              <label for="validationCustom01" class="form-label">EnquiryFor</label>
+              <input type="text" class="form-control" placeholder="Enter Enquiry For...." formControlName="enquireFor">
+              
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col mb-4">
+              <label for="inputState">Status</label>
+                <select class="form-select"  class="form-control" formControlName="status">
+                    <option [value]=true>Active</option>
+                    <option [value]=false>InActive</option>
+                  
+                  </select>
+              
+            </div>
+            
+          </div>
+            
+            <div class="col-12 my-2 text-right">
+              <button class="btn btn-danger" type="button">Reset</button>
+              <button class="btn btn-success ml-2" type="submit">Save</button>
+              <button class="btn btn-danger ml-2" (click)="cutTo()" type="button">Cancel</button>
+            </div>
+          </form>
+
+     </div>
+     
+</div>
+

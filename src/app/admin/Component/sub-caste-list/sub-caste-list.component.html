@@ -1,0 +1,46 @@
+<div class="container shadow ">
+    <div class="row shadow">
+        <div class="col-sm-10 text-center  mt-3">
+            <h2><strong>SubCaste Details</strong></h2>
+        </div>
+        <div class="col-sm-2 mt-3">
+            <button type="button" class="btn btn-primary" (click)="openModal()"><i class="bi bi-plus-circle-dotted"></i>
+                Add SubCaste</button>
+        </div>
+    </div>
+        
+        <div class="table-responsive">
+            <table class="table table-striped shadow">
+                <thead>
+                    <tr>
+                        <!-- <th>CountryName</th> -->
+                        <th>SubCasteName</th>
+                        <th>Status</th>
+                        <th>CreatedOn</th>
+                        <th>Actions</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let subCastt of SubCasteList">
+                        <td>{{subCastt.subCasteName}}</td>
+                        <td>{{subCastt.status}}</td>
+                        <td>{{subCastt.createdOn}}</td>
+                        
+                        <td>
+                            <button type="button" class="btn btn-success btn-rounded" data-mdb-ripple-init><i class="fa fa-edit " (click)="updateSubCaste(subCastt)"  style="color: white;"></i></button>
+                            <button type="button" class="btn btn-danger ml-2 btn-rounded" data-mdb-ripple-init><i class="fa fa-trash-o ml-2" (click)="deleteSubCaste(subCastt.subCasteId)" style="color: white;"></i> </button>
+                           
+                          
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+          
+    
+</div>
+
+

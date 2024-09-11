@@ -1,0 +1,36 @@
+<div class="container shadow">
+    <div class="row shadow">
+        <div class="col-sm-10 mt-3">
+     <h2 class="text-center"><strong>Qualification Details</strong></h2>
+        </div>
+        <div class="col-sm-2 mt-3">
+            <button type="button" class="btn btn-primary" (click)="addQualication()"><i class="bi bi-plus-circle-dotted"></i>
+                Add Qualif</button>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>QualificationName</th>
+                    <th>CreatedOn</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let qualificate of qualificatedList">
+                    <td>{{qualificate.qualificationName}}</td>
+                    
+                    <td>{{qualificate.createdOn}}</td>
+                    <td>{{qualificate.status}}</td>
+                    <td>
+                    <i class="fa fa-trash-o" (click)="trashQualification(qualificate.qualificationId)" style="color: maroon;"></i>
+                    <i class="fa fa-edit ml-2" (click)="editQulaification(qualificate)" style="color: darkgreen;"></i>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

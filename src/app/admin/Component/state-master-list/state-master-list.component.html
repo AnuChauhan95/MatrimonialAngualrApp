@@ -1,0 +1,43 @@
+<div class="card shadow">
+    <div class="modal-header text-center">
+        <h4 class="modal-title ">{{title}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="cutTo()">
+           <span aria-hidden="true">×</span>
+        </button>
+     </div>
+     <div class="modal-body">
+        <form [formGroup]="stateCreation" (ngSubmit)="saveState()">
+            <div class="col mb-3">
+              <label for="inputState">CountryName</label>
+                <select class="form-select"  class="form-control" formControlName="countryId">
+                    <option value="0" selected>Choose Country....</option>
+                    <option *ngFor="let country of countryLi"[value]="country.countryId">{{country.countryName}}</option>
+                  
+                  </select>
+                
+              </div>
+
+            <div class="col mb-3">
+              <label for="validationCustom01" class="form-label" >StateName</label>
+              <input type="text" class="form-control " placeholder="Enter Name...."  formControlName="statName" >
+              
+            </div>
+            <div class="col mb-3">
+              <label for="inputState">Status</label>
+                <select class="form-select"  class="form-control"  formControlName="status">
+                    <option [value]=true>Active</option>
+                    <option [value]=false>InActive</option>
+                  
+                  </select>
+              
+            </div>
+            
+            <div class="col-12 my-2 text-right">
+              <button class="btn btn-primary shadow" type="submit">Save</button>
+              <button class="btn btn-danger shadow ml-2" (click)="cutTo()" type="button">Cancel</button>
+            </div>
+          </form>
+
+     </div>
+     
+</div>

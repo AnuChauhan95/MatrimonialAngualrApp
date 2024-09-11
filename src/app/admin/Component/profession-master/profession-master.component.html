@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left"><strong>{{title}}</strong></h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closePopup()">
+       <span aria-hidden="true">×</span>
+    </button>
+ </div>
+ <div class="modal-body">
+   
+    <form [formGroup]="formOfProfession" (ngSubmit)="saveProfession()">
+        <div class="mb-3">
+          <label  class="form-label"><strong>Profession Name</strong></label>
+          <input type="text" class="form-control" placeholder="Enter Profession Name....." formControlName="proName">
+
+        </div>
+        
+        <div class="row">
+            <div class="col mb-3">
+              <label for="inputState"><strong>Status</strong></label>
+                <select class="form-select"  class="form-control"  formControlName="status">
+                    <option [value]=true>Active</option>
+                    <option [value]=false>InActive</option>
+                  
+                  </select>
+                               
+            </div>
+          </div>
+
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-danger"(click)="closePopup()">Close</button>
+
+         </div>
+      </form>
+  
+ </div>
+ 

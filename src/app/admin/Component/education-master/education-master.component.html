@@ -1,0 +1,39 @@
+<div class="card shadow">
+  <div class="modal-header text-center">
+    <h4 class="modal-title ">Add New District</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="cutTo()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="validationCustom01" class="form-label">SubCasteName</label>
+          <input type="text" class="form-control">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="inputState">Status</label>
+          <select class="form-select" class="form-control">
+            <option [value]=true>Active</option>
+            <option [value]=false>InActive</option>
+
+          </select>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 my-2 text-right">
+          <button class="btn btn-primary" type="submit">Save</button>
+          <button class="btn btn-danger ml-2" (click)="cutTo()" type="button">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

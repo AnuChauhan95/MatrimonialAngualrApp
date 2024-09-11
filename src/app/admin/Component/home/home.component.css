@@ -1,0 +1,21 @@
+.banner-card{
+    width: 230px;
+    height: 230px;
+    background-color: rgb(224, 221, 230);
+    border-radius: 12px;
+    box-shadow: 1px 1px 5px black;
+}
+.main{
+    display: flex;
+    gap: 39px;
+    margin-top: 40px;
+    padding-left: 56px;
+}
+#imgset{
+    mix-blend-mode: color-burn;
+    padding-left: 20px;
+}
+#center{
+    text-align: center;
+    color: maroon;
+}

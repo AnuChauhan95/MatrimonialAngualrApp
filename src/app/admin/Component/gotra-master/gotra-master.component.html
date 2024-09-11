@@ -1,0 +1,61 @@
+<div class="card shadow">
+    <div class="modal-header  text-center">
+        <h4 class="modal-title "><strong>{{title}}</strong> </h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="cutTo()">
+           <span aria-hidden="true">×</span>
+        </button>
+     </div>
+     <div class="modal-body">
+        <form [formGroup]="formCreationGotra" (ngSubmit)="saveGotra()">
+          <div class="row">
+            <div class="col mb-3">
+              <label for="inputState" >SubCasteName</label>
+                <select class="form-select" formControlName="subCateId" class="form-control">
+                    <option value="0">Choose Gotras...</option>
+                    <option  *ngFor="let subCasstt of subCasttList" [value]="subCasstt.subCasteId">{{subCasstt.subCasteName}}</option>
+                  
+                  </select>
+                  <div style="color: red;" *ngIf="formCreationGotra.get('subCateId')?.hasError('required')&&formCreationGotra.get('subCateId')?.touched">
+                      <small>Enter SubCaste Name !!</small>
+                  </div>
+              
+            </div>
+          </div>
+           
+          <div class="row">
+            <div class="col mb-3">
+              <label for="validationCustom01" class="form-label ">GotrasName</label>
+              <input type="text" class="form-control" placeholder="Enter GotraName...." formControlName="gotraNames">
+              <div style="color: red;" *ngIf="formCreationGotra.get('gotraNames')?.hasError('required')&&formCreationGotra.get('gotraNames')?.touched">
+                <small>Enter SubCaste Name !!</small>
+            </div>
+            </div>
+          </div>
+
+           <div class="row">
+            <div class="col mb-3">
+              <label for="inputState" >Status</label>
+                <select class="form-select"  class="form-control" formControlName="status">
+                    <option [value]=true>Active</option>
+                    <option [value]=false>InActive</option>
+                  
+                  </select>
+
+                  <div style="color: red;" *ngIf="formCreationGotra.get('status')?.hasError('required')&&formCreationGotra.get('status')?.touched">
+                    <small>Enter SubCaste Name !!</small>
+                </div>
+              
+            </div>
+           </div>
+         <div class="row">
+          <div class="col-12 my-2  text-right">
+            <button class="btn btn-primary shadow" type="submit">Save</button>
+            <button class="btn btn-danger shadow ml-2" (click)="cutTo()" type="button">Cancel</button>
+          </div>
+         </div>
+            
+          </form>
+
+     </div>
+     
+</div>

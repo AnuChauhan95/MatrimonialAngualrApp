@@ -1,0 +1,36 @@
+<div class="container shadow">
+    <div class="row shadow">
+        <div class="col-sm-10 text-center mt-3">
+            <h2><strong>Profession Details</strong></h2>
+        </div>
+        <div class="col-sm-2 mt-3">
+            <button type="button" class="btn btn-primary" (click)="addProfession()"><i class="bi bi-plus-circle-dotted"></i>
+                Add Profession</button>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ProfessionName</th>
+                    <th scope="col">Status</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let proItem of proList">
+
+                    <td>{{proItem.professionName}}</td>
+                    <td>{{proItem.status}}</td>
+                    <td>
+                        <i class="fa fa-edit" (click)="editProfession(proItem)" style="color: green;"></i>
+                        <i class="fa fa-trash-o ml-2"  (click)="deleteProfession(proItem.professionId)" style="color: maroon;"></i>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

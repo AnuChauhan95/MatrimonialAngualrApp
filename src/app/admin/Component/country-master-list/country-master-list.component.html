@@ -1,0 +1,51 @@
+<div class="card shadow">
+  <div class="modal-header  text-center">
+    <h4 class="modal-title "><strong>{{title}}</strong></h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="cutTo()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="countriesCreation" (ngSubmit)="countryData()">
+      <div class="row">
+        <div class="col mb-3">
+          <label for="validationCustom01" class="form-label ">CountryName</label>
+          <input type="text" class="form-control " placeholder="Enter Country..." formControlName="countryName">
+          <div style="color: red;"
+            *ngIf="countriesCreation.get('countryName')?.hasError('required')&& countriesCreation.get('countryName')?.touched">
+            <small>Country name is valid!!!</small>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="inputState">Status</label>
+          <select class="form-select" class="form-control" formControlName="status">
+            <option>Choose...</option>
+            <option [value]=true>Active</option>
+            <option [value]=false>InActive</option>
+
+          </select>
+          <div style="color: red;"
+            *ngIf="countriesCreation.get('countryName')?.hasError('required')&& countriesCreation.get('countryName')?.touched">
+            <small>Status is valid!!!</small>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 my-2 text-right">
+          <button class="btn btn-danger shadow " (click)="resetData()" type="button">Reset</button>
+          <button class="btn btn-primary shadow ml-2" type="submit">Save </button>
+          <button class="btn btn-danger shadow ml-2" (click)="cutTo()" type="button">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

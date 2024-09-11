@@ -1,0 +1,53 @@
+<div class="container shadow">
+    <div class="row shadow">
+        <div class="col-sm-10 text-center mt-3">
+            <h2><strong>District Details</strong></h2>
+        </div>
+        <div class="col-sm-2 mt-3">
+            <button type="button" class="btn btn-primary" (click)="AddModel()"><i class="bi bi-plus-circle-dotted"></i>
+                Add District</button>
+        </div>
+    </div>
+
+
+    <div class="table-responsive">
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <!-- <th>CountryName</th> -->
+                    <th>DistrictName</th>
+                    <th>Status</th>
+                    <th>CreatedOn</th>
+                    <th>Actions</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let districts of districtList">
+                    <td>{{districts.districtName}}</td>
+                    <td>{{districts.status}}</td>
+                    <td>{{districts.createdOn}}</td>
+
+                    <td>
+
+                        <button type="button" class="btn btn-danger btn-rounded" data-mdb-ripple-init
+                            data-mdb-ripple-color="dark"> <i class="fa fa-edit " (click)="updateData(districts)"
+                                style="color: white;"></i> </button>
+
+                        <button type="button" class="btn btn-success btn-rounded ml-2" data-mdb-ripple-init
+                            data-mdb-ripple-color="dark"><i class="fa fa-trash-o ml-2"
+                                (click)="deleteDistricts(districts.districtId)" style="color: white;"></i> </button>
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+</div>

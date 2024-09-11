@@ -1,0 +1,144 @@
+
+
+<div class="card ">
+    <div class="modal-header text-center">
+        <h4 class="modal-title ">Add SubCaste Management</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="cutTo()">
+           <span aria-hidden="true">×</span>
+        </button>
+     </div>
+     <div class="modal-body">
+        <form [formGroup]="formCreationOfSubCaste" (ngSubmit)="saveSubCaste()">
+            
+          <div class="row">
+            <div class="col mb-3">
+              <label for="validationCustom01" class="form-label ">SubCasteName</label>
+              <input type="text" class="form-control " placeholder="Enter SubCaste Name...." formControlName="subCastes">
+              
+            </div>
+          </div>
+           <div class="row">
+            <div class="col mb-3">
+              <label for="inputState">Status</label>
+                <select class="form-select"  class="form-control" formControlName="status">
+                    <option [value]=true>Active</option>
+                    <option [value]=false>InActive</option>
+                  
+                  </select>
+              
+            </div>
+           </div>
+         
+             <div class="row">
+              <div class="col-12 my-2 text-right">
+                <button class="btn btn-primary shadow" type="submit">Save</button>
+                <button class="btn btn-danger shadow ml-2" (click)="cutTo()" type="button">Cancel</button>
+              </div>
+             </div>
+          
+          </form>
+
+     </div>
+     
+</div>
+
+
+
+
+
+
+<!-- <div class="card shadow">
+    <div class="modal-header text-center">
+        <h4 class="modal-title ">Add New District</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="cutTo()">
+           <span aria-hidden="true">×</span>
+        </button>
+     </div>
+     <div class="modal-body">
+        <form>
+            
+
+            <div class="col mb-3">
+              <label for="validationCustom01" class="form-label">SubCasteName</label>
+              <input type="text" class="form-control">
+              
+            </div>
+            <div class="col mb-3">
+              <label for="inputState">Status</label>
+                <select class="form-select"  class="form-control">
+                    <option [value]=true>Active</option>
+                    <option [value]=false>InActive</option>
+                  
+                  </select>
+              
+            </div>
+            
+           
+            
+           
+            <div class="col-12 my-2 text-right">
+              <button class="btn btn-primary" type="submit">Save</button>
+              <button class="btn btn-danger ml-2" (click)="cutTo()" type="button">Cancel</button>
+            </div>
+          </form>
+
+     </div>
+     
+</div> -->
+
+<!-- constructor(private _modalService: BsModalService){}
+  ngOnInit(): void {
+    
+  }
+  
+  cutTo() {
+    this._modalService.hide();
+  } -->
+
+
+
+
+
+
+  <!-- <div class="text-right my-2">
+    <button type="button" class="btn btn-primary" (click)="openModal()">Add District</button>
+</div>-->
+
+<!-- <div class="card shadow my-2">
+    <h3 class="text-center text-gray my-2">SubCaste Management</h3>
+    <hr>
+   
+        <table class="table table-striped shadow">
+            <thead>
+                <tr>
+                    
+                    <th>SubCasteName</th>
+                    <th>Status</th>
+                    <th>CreatedOn</th>
+                    <th>Actions</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let subCastt of SubCasteList">
+                    <td>{{subCastt.subCasteName}}</td>
+                    <td>{{subCastt.status}}</td>
+                    <td>{{subCastt.createdby}}</td>
+                    
+                    <td>
+                      <i class="fa fa-edit "  style="color: darkgreen;"></i> 
+                      <i class="fa fa-trash-o ml-2" style="color: maroon;"></i> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    
+</div>  -->
+
+<!-- openModal(){
+    this.modalRef=this._modalService.show(SubcasteMasterComponent,{
+      class:('model-md'),
+     
+    }); -->

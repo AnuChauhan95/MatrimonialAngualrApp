@@ -1,0 +1,61 @@
+<div class="card shadow">
+  <div class="modal-header text-center">
+    <h4 class="modal-title ">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="cutTo()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="formOfDistrict" (ngSubmit)="saveDistrict()">
+      <div class="row">
+        <div class="col mb-3">
+          <label for="inputState">StateName</label>
+          <select class="form-select" class="form-control shadow" formControlName="stateId">
+            <option value="0" selected>Choose States....</option>
+            <option *ngFor="let states of statesList" [value]="states.stateId">{{states.stateName}}</option>
+
+          </select>
+          <div style="color: red;"
+            *ngIf="formOfDistrict.get('stateId')?.hasError('required')&& formOfDistrict.get('stateId')?.touched">
+          <small>Select a state!!!</small></div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="validationCustom01" class="form-label">DistrictName</label>
+          <input type="text" class="form-control shadow" placeholder="Enter Districts.."
+            formControlName="districtsName">
+            <div style="color: red;"
+            *ngIf="formOfDistrict.get('stateId')?.hasError('required')&& formOfDistrict.get('stateId')?.touched">
+          <small> Enter a valid districtName!!!</small></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="inputState">Status</label>
+          <select class="form-select" class="form-control shadow" formControlName="status">
+
+            <option [value]=true>Active</option>
+            <option [value]=false>InActive</option>
+
+          </select>
+
+          <div style="color: red;"
+            *ngIf="formOfDistrict.get('stateId')?.hasError('required')&& formOfDistrict.get('stateId')?.touched">
+          <small>Select Status!!!</small></div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 my-2 text-right">
+          <button class="btn btn-primary shadow" type="submit">Save</button>
+          <button class="btn btn-danger shadow ml-2" (click)="cutTo()" type="button">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

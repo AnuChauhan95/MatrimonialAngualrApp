@@ -1,0 +1,276 @@
+<div class="container shadow">
+
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12 mt-3">
+                    <h2 class="text-center"><strong>New Registration</strong></h2>
+                </div>
+            </div>
+            <form [formGroup]="creationForm" (ngSubmit)="saveRegistr()">
+
+                <div class="row  align-items-center pt-1 ">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">ProfileId:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <input type="text" class="form-control " formControlName="proId" />
+
+                    </div>
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Location:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <input type="text" class="form-control " formControlName="locationData" />
+
+                    </div>
+                </div>
+
+                <div class="row align-items-center pt-1 ">
+                    <div class="col-sm-2 ">
+
+                        <label class="mb-0">Religion:</label>
+
+                    </div>
+                    <div class="col-sm-4 ">
+
+                        <input type="text" class="form-control " formControlName="religionData" />
+
+                    </div>
+                    <div class="col-sm-2 ">
+
+                        <label class="mb-0">Age:</label>
+
+                    </div>
+                    <div class="col-sm-4 ">
+
+                        <input type="text" class="form-control" formControlName="age" />
+
+                    </div>
+                </div>
+                <div class="row align-items-center pt-1">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Marital Status:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example" formControlName="maritalState">
+                            <option value="0" selected>Select marital Status....</option>
+                            <option  *ngFor="let maritals of maritalLists" [value]="maritals.id">{{maritals.maritalStatus}}</option>
+                            <option  [value]="false">Unmarried</option>
+                        </select>
+
+                    </div>
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0"> Height:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <input type="text" class="form-control" formControlName="height" />
+
+                    </div>
+                </div>
+                <div class="row align-items-center pt-1 ">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Caste:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example" (change)="getCaste($event)" formControlName="castees">
+                            <option selected>Select Caste...</option>
+                            <option *ngFor="let castes of casteList" [value]="castes.casteId">{{castes.casteName}}</option>
+
+                        </select>
+
+                    </div>
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Complexion:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <input type="text" class="form-control" formControlName="comlexionOfBody" />
+
+                    </div>
+                </div>
+                <div class="row align-items-center pt-1 ">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">SubCaste:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example"(change)="getGotraData($event)"  formControlName="subCaste">
+                            <option value="0"  selected>Select SubCaste...</option>
+                            <option *ngFor="let subCaste of subCasteList" [value]="subCaste.subCasteId">{{subCaste.subCasteName}}</option>
+
+                        </select>
+
+                    </div>
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Home Location:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <input type="text" class="form-control " formControlName="villageLocation" />
+
+                    </div>
+                </div>
+                <div class="row align-items-center pt-1">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Gotra:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example" formControlName="gotraDetails">
+                            <option value="0" selected>Select Gotra...</option>
+                            <option *ngFor="let gotras of gotraList" [value]="gotras.gotraId">{{gotras.gortaName}}</option>
+
+                        </select>
+
+                    </div>
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Country:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example" (change)="getByIdToState($event)" formControlName="countrydata">
+                            <option value="0" selected>Select Country...</option>
+                            <option *ngFor="let countries of countryList" [value]="countries.countryId">{{countries.countryName}}</option>
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="row align-items-center pt-1">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Qualifiction:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example"
+                            formControlName="qualification">
+                            <option value="0" selected>select qualification...</option>
+                            <option *ngFor="let quali of qualificationList" [value]="quali.qualificationId"><strong>{{quali.qualificationName}}</strong></option>
+
+                        </select>
+
+                    </div>
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">State:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example" (change)="getByIdDistrict($event)"  formControlName="stateInformation">
+                            <option selected>select state...</option>
+                            <option *ngFor="let states of stateList" [value]="states.stateId">{{states.stateName}}</option>
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="row align-items-center pt-1">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Profession:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example" formControlName="professionData">
+                            <option value="0" selected>select profession...</option>
+                            <option  *ngFor="let profesion of professionList" [value]="profesion.professionId">{{profesion.professionName}}</option>
+
+                        </select>
+
+                    </div>
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">District:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <select class="form-control" aria-label="Default select example"  formControlName="districtItem">
+                            <option value="0" selected>select district...</option>
+                            <option *ngFor="let districts of districtList" [value]="districts.districtId">{{districts.districtName}}</option>
+
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row align-items-center pt-1">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0">Upload Photo:</label>
+
+                    </div>
+                    <div class="col-sm-4 pt-1">
+
+                        <input class="form-control form-control-lg" id="formFileLg"  formControlName="imageFirst" type="file"
+                             (change)="onSaveRegistar($event)" />
+
+                    </div>
+
+                </div>
+
+                <div class="row align-items-center pt-1">
+                    <div class="col-sm-2 ps-5">
+
+                        <label class="mb-0"> Upload Multiple Image:</label>
+
+                    </div>
+                    <div class="col-sm-4 pe-5">
+
+                        <input class="form-control form-control-lg" id="formFileLg" formControlName="imageSecond" type="file"
+                             (change)="onSaveRegistar($event)" />
+
+                    </div>
+
+
+                    <div class="col-md-4 pe-5">
+
+                        <input class="form-control form-control-lg" id="formFileLg" formControlName="imageThird" type="file"
+                             (change)="onSaveRegistar($event)" />
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button type="submit" class="btn btn-success btn-md text-center"><i class="fa fa-sign-in"></i>
+                        Submit </button>
+                        
+                    <button type="button" class="btn btn-primary btn-md  mx-3"><i class="fa fa-backward"></i>
+                        Back </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
